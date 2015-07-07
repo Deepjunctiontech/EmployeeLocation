@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\deep\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.2\1f96456ca233dec780aa224bff076d8e8bca3908\gson-2.2.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1f96456ca233dec780aa224bff076d8e8bca3908">
+        <dex dex="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\pre-dexed\debug\gson-2.2.2-746de3372153fc093f2a361c6653e90ceeb85d6d.jar" />
+    </item>
+    <item
+        jar="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\pre-dexed\debug\classes-d1ce7ff9eefdb31c58b992d55554f6d92328ca52.jar" />
+    </item>
+    <item
+        jar="C:\Users\deep\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-80dfb2db24526cc54863111fb7cbb4366ba216cb.jar" />
+    </item>
+    <item
+        jar="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-a80bed022d7848c4de97c47078456db79007c7e4.jar" />
+    </item>
+    <item
+        jar="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\deep\AndroidStudioProjects\EmployeeLocation\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-39f133b677f2592ac03580246126bd29f7f87a6b.jar" />
+    </item>
+
+</items>
