@@ -13,6 +13,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
@@ -56,11 +57,46 @@ public class MyService extends Service implements LocationListener{
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		
 		super.onStartCommand(intent, flags, startId);
+       boolean gps_enable=false,network_enable=false;
 
-		lm.requestSingleUpdate(LocationManager.GPS_PROVIDER, this, null);
-		
-		
-		Intent alarmIntent = new Intent(getApplicationContext(), SampleBC.class);
+        try
+        {
+            gps_enable=lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        }catch(Exception e)
+        {
+            Toast.makeText(this, "Exception GPS_Enable",
+                    Toast.LENGTH_LONG).show();
+        }
+
+        try
+        {
+            network_enable=lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        }catch(Exception e)
+        {
+            Toast.makeText(this, "Exception Network_Enable",
+                    Toast.LENGTH_LONG).show();
+        }
+
+        if(!gps_enable&&!network_enable)
+        {
+            Toast.makeText(this, "Both not enable",
+                    Toast.LENGTH_LONG).show();
+            Intent i=new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            this.startActivity(i);
+        }
+        else if(gps_enable) {
+            Toast.makeText(this, " GPS_Enable",
+                    Toast.LENGTH_LONG).show();
+            lm.requestSingleUpdate(LocationManager.GPS_PROVIDER, this, null);
+        }
+        else if(network_enable) {
+            Toast.makeText(this, "Network_Enable",
+                    Toast.LENGTH_LONG).show();
+            lm.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, this, null);
+        }
+
+        Intent alarmIntent = new Intent(getApplicationContext(), SampleBC.class);
 		
 		
 		 PendingIntent pendingIntent = PendingIntent.getBroadcast(
@@ -71,7 +107,7 @@ public class MyService extends Service implements LocationListener{
 				.getSystemService(Context.ALARM_SERVICE);
 
 		alarmManager.set(AlarmManager.RTC_WAKEUP, Calendar
-				.getInstance().getTimeInMillis() + 30*60*1000, pendingIntent);
+				.getInstance().getTimeInMillis() + 30*1000, pendingIntent);
 		
 		return START_REDELIVER_INTENT;
 	}
